@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.hoon.profileweb.dao.IDao">
+	<!-- Member SQL -->
+	<insert id="joinDao">
+		insert into web_member(mid, mpw, mname, memail) values(#{param1},#{param2},#{param3},#{param4})
+	</insert>
+	
+	<select id="checkIdDao" resultType="int">
+		select count(*) from web_member where mid=#{param1}
+	</select>
+	
+	<select id="checkIdPwDao" resultType="int">
+		select count(*) from web_member where mid=#{param1} and mpw=#{param2}
+	</select>
+	
+	<select id="memberInfoDao" resultType="com.hoon.profileweb.dto.MemberDto">
+		select * from web_member where mid=#{param1}
+	</select>
+	
+	<update id="infoModifyDao">
+		update web_member set mpw=#{param1}, mname=#{param2}, memail=#{param3} where mid=#{param4}
+	</update>
+	
+	<!-- Board SQL -->
+	
+	<insert id="writeDao">
+		insert into web_board(qnum, qid, qname, qcontent, qemail) values(web_board_seq.nextval,#{param1},#{param2},#{param3},#{param4})
+	</insert>
+	
+	<select id="listDao" resultType="com.hoon.profileweb.dto.BoardDto">
+		select * from web_board order by qnum desc
+	</select>
+	
+	<select id="contentViewDao" resultType="com.hoon.profileweb.dto.BoardDto">
+		select * from web_board where qnum = #{param1}
+	</select>
+	
+	<delete id="deleteDao">
+		delete from web_board where qnum=#{param1}
+	</delete>
+	
+	<update id="qmodifyDao">
+		update web_board set qname=#{param1}, qcontent=#{param2}, qemail=#{param3} where qnum=#{param4}
+	</update>
+</mapper>

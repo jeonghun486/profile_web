@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+span.content_text{
+	
+	font-size: 20px;
+	color: #ffffff;
+	font-family: malgun;
+	font-weight: bold;
+	font-align:center;
+}
+
+span.info_text{
+	
+	font-size: 20px;
+	color: #0a0468;
+	font-family: malgun;
+	font-weight: normal;
+	font-align:left;
+}
+
+input.input_box{
+	
+	border: 1px solid #ffffff;
+	background-color: #ffffff;
+	width: 200px;
+	padding:5px;
+	margin:10px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #000000;
+}
+
+textarea.questiontext{
+	
+	border: 1px solid #ffffff;
+	background-color: #ffffff;
+	width: 200px;
+	padding:5px;
+	margin:10px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #000000;
+}
+
+input.button{
+	
+	border: 1px solid #d5d5d5;
+	background-color: #5e5e5e;
+	width: 175px;
+	padding:5px;
+	font-family: Arial;
+	font-size: 18px;
+	color: #d5d5d5;
+}
+
+input.button:hover{
+	
+	background-color: #363636;
+}
